@@ -8,10 +8,7 @@ public class Garage extends Estate {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Garage(int surface, int localNumber, int floor, Address address) {
-		super(surface, localNumber, floor, address);
-		// TODO Auto-generated constructor stub
-	}
+	
 
 	@Override
 	public String toString() {

@@ -8,10 +8,7 @@ public class Villa extends Estate {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Villa(int surface, int localNumber, int floor, Address address) {
-		super(surface, localNumber, floor, address);
-		
-	}
+
 
 	public Type getType() {
 		return type;

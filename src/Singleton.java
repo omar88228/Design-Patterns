@@ -32,8 +32,7 @@ public class Singleton {
 
 		BufferedReader reader;
 		try {
-			reader = new BufferedReader(
-					new FileReader("./WebContent/info.csv"));
+			reader = new BufferedReader(new FileReader("./WebContent/info.csv"));
 			String line = reader.readLine();
 			while (line != null) {
 				this.getLista().add(line);
@@ -47,39 +46,15 @@ public class Singleton {
 
 	}
 
-	public Estate createEstate(Address address) {
-		String[] attributes = atributeSplit();
+//	public Estate createEstate(Address address) {
+//		String[] attributes = atributeSplit();
+//
+//		return new Estate(Integer.parseInt(attributes[0]), Integer.parseInt(attributes[1]),
+//				Integer.parseInt(attributes[2]), address);
+//
+//	}
 
-		return new Estate(Integer.parseInt(attributes[0]), Integer.parseInt(attributes[1]),
-				Integer.parseInt(attributes[2]), address);
 
-	}
-	public Villa createVilla(Address address) {
-		String[] attributes = atributeSplit();
-
-		return new Villa(Integer.parseInt(attributes[0]), Integer.parseInt(attributes[1]), Integer.parseInt(attributes[2]), address);
-
-	}
-	public Garage createGarage(Address address) {
-		String[] attributes = atributeSplit();
-
-		return new Garage(Integer.parseInt(attributes[0]), Integer.parseInt(attributes[1]), Integer.parseInt(attributes[2]), address);
-
-	}
-	public Apartment createApartment(Address address) {
-		String[] attributes = atributeSplit();
-
-		return new Apartment(Integer.parseInt(attributes[0]), Integer.parseInt(attributes[1]), Integer.parseInt(attributes[2]), address);
-
-	}
-	public Address createAdress() {
-		String[] attributes = atributeSplit();
-		Address address = new Address(attributes[3], attributes[4], attributes[5], attributes[6],
-				Integer.parseInt(attributes[7]));
-		cunt++;
-		return address;
-
-	}
 
 	public String[] atributeSplit() {
 
