@@ -33,7 +33,7 @@ public class Singleton {
 		BufferedReader reader;
 		try {
 			reader = new BufferedReader(
-					new FileReader("C:\\Users\\o.oueslati\\eclipse-workspace\\Immobile\\WebContent/info.csv"));
+					new FileReader("./WebContent/info.csv"));
 			String line = reader.readLine();
 			while (line != null) {
 				this.getLista().add(line);
