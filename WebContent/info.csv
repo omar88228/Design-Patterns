@@ -1,4 +1,4 @@
-surface,localNumber,floor,Address
-180,5,2,strada del bosco 14,latina,latina,lazio,04100
-90,4,1,strada del bosco 14,latina,latina,lazio,04100
-100,4,8,strada del bosco 14,latina,latina,lazio,04100
+surface,localNumber,floor,Address,Type
+180,5,2,strada del bosco 14,latina,latina,lazio,04100,villa
+90,4,1,strada del bosco 14,latina,latina,lazio,04100,garage
+100,4,8,strada del bosco 14,latina,latina,lazio,04100,apartment

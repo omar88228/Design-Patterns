@@ -1,11 +1,11 @@
 package Entity;
 
-public class Estate {
+public class Estate implements Iestate {
 	private int surface ;
 	private int localNumber;
 	private int floor ;
 	private Address address;
-	private Type type ;
+	
 	
 	public Estate() {
 		
@@ -18,14 +18,7 @@ public class Estate {
 		this.address = address;
 		
 	}
-	public Estate(int surface, int localNumber, int floor, Address address, Type type) {
-		super();
-		this.surface = surface;
-		this.localNumber = localNumber;
-		this.floor = floor;
-		this.address = address;
-		this.type = type;
-	}
+	
 	public int getSurface() {
 		return surface;
 	}
@@ -50,16 +43,16 @@ public class Estate {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-	public Type getType() {
-		return type;
-	}
-	public void setType(Type type) {
-		this.type = type;
-	}
+
 	@Override
 	public String toString() {
 		return "Estate [surface=" + surface + ", localNumber=" + localNumber + ", floor=" + floor + ", address="
-				+ address + ", type=" + type + "]";
+				+ address +  "]";
+	}
+	@Override
+	public String estateType() {
+		// TODO Auto-generated method stub
+		return toString();
 	}
 	
 	

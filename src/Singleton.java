@@ -4,12 +4,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import Entity.Address;
+import Entity.Apartment;
 import Entity.Estate;
+import Entity.Garage;
+import Entity.Villa;
 
 public class Singleton {
 	private int cunt = 1;
 	private static Singleton singleton;
-	private  ArrayList<String> lista = new ArrayList<String>();
+	private ArrayList<String> lista = new ArrayList<String>();
 
 	private Singleton() {
 
@@ -25,7 +28,7 @@ public class Singleton {
 
 	}
 
-	public  void readFile() {
+	public void readFile() {
 
 		BufferedReader reader;
 		try {
@@ -41,16 +44,50 @@ public class Singleton {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
+
 	}
-	
-	public Estate createEstate( ) {
-		String infoEstate = this.getLista().get(cunt);
-		String [] attributes=infoEstate.split(",");
-		Address address = new Address(attributes[3], attributes[4], attributes[5], attributes[6],Integer.parseInt(attributes[7]) );
+
+	public Estate createEstate(Address address) {
+		String[] attributes = atributeSplit();
+
+		return new Estate(Integer.parseInt(attributes[0]), Integer.parseInt(attributes[1]),
+				Integer.parseInt(attributes[2]), address);
+
+	}
+	public Villa createVilla(Address address) {
+		String[] attributes = atributeSplit();
+
+		return new Villa(Integer.parseInt(attributes[0]), Integer.parseInt(attributes[1]), Integer.parseInt(attributes[2]), address);
+
+	}
+	public Garage createGarage(Address address) {
+		String[] attributes = atributeSplit();
+
+		return new Garage(Integer.parseInt(attributes[0]), Integer.parseInt(attributes[1]), Integer.parseInt(attributes[2]), address);
+
+	}
+	public Apartment createApartment(Address address) {
+		String[] attributes = atributeSplit();
+
+		return new Apartment(Integer.parseInt(attributes[0]), Integer.parseInt(attributes[1]), Integer.parseInt(attributes[2]), address);
+
+	}
+	public Address createAdress() {
+		String[] attributes = atributeSplit();
+		Address address = new Address(attributes[3], attributes[4], attributes[5], attributes[6],
+				Integer.parseInt(attributes[7]));
 		cunt++;
-		return new Estate(Integer.parseInt(attributes[0]), Integer.parseInt(attributes[1]), Integer.parseInt(attributes[2]), address);
-		
+		return address;
+
+	}
+
+	public String[] atributeSplit() {
+
+		String infoEstate = this.getLista().get(cunt);
+		String[] attributes = infoEstate.split(",");
+
+		return attributes;
+
 	}
 
 	public int getCunt() {
@@ -68,5 +105,5 @@ public class Singleton {
 	public void setLista(ArrayList<String> lista) {
 		this.lista = lista;
 	}
-	
+
 }
