@@ -50,6 +50,11 @@ public class Address {
 	public void setCap(int cap) {
 		this.cap = cap;
 	}
+	@Override
+	public String toString() {
+		return "Address [Street=" + Street + ", city=" + city + ", province=" + province + ", region=" + region
+				+ ", cap=" + cap + "]";
+	}
 	
 	
 }

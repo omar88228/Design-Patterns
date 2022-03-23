@@ -3,16 +3,19 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import Entity.Address;
+import Entity.Estate;
+
 public class Singleton {
-	private int cunt = 0;
+	private int cunt = 1;
 	private static Singleton singleton;
-	private static ArrayList<String> lista = new ArrayList<String>();
+	private  ArrayList<String> lista = new ArrayList<String>();
 
 	private Singleton() {
 
 	}
 
-	public Singleton getSingletion() {
+	public static Singleton getSingletion() {
 
 		if (singleton == null) {
 			singleton = new Singleton();
@@ -22,7 +25,7 @@ public class Singleton {
 
 	}
 
-	public static ArrayList<String> readFile() {
+	public  void readFile() {
 
 		BufferedReader reader;
 		try {
@@ -30,7 +33,7 @@ public class Singleton {
 					new FileReader("C:\\Users\\o.oueslati\\eclipse-workspace\\Immobile\\WebContent/info.csv"));
 			String line = reader.readLine();
 			while (line != null) {
-				lista.add(line);
+				this.getLista().add(line);
 
 				line = reader.readLine();
 			}
@@ -38,10 +41,32 @@ public class Singleton {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(lista.get(1));
-
-		return lista;
-
+	
+	}
+	
+	public Estate createEstate( ) {
+		String infoEstate = this.getLista().get(cunt);
+		String [] attributes=infoEstate.split(",");
+		Address address = new Address(attributes[3], attributes[4], attributes[5], attributes[6],Integer.parseInt(attributes[7]) );
+		cunt++;
+		return new Estate(Integer.parseInt(attributes[0]), Integer.parseInt(attributes[1]), Integer.parseInt(attributes[2]), address);
+		
 	}
 
+	public int getCunt() {
+		return cunt;
+	}
+
+	public void setCunt(int cunt) {
+		this.cunt = cunt;
+	}
+
+	public ArrayList<String> getLista() {
+		return lista;
+	}
+
+	public void setLista(ArrayList<String> lista) {
+		this.lista = lista;
+	}
+	
 }

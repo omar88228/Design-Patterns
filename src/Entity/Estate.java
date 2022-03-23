@@ -8,7 +8,15 @@ public class Estate {
 	private Type type ;
 	
 	public Estate() {
+		
+	}
+	public Estate(int surface, int localNumber, int floor, Address address) {
 		super();
+		this.surface = surface;
+		this.localNumber = localNumber;
+		this.floor = floor;
+		this.address = address;
+		
 	}
 	public Estate(int surface, int localNumber, int floor, Address address, Type type) {
 		super();
@@ -47,6 +55,11 @@ public class Estate {
 	}
 	public void setType(Type type) {
 		this.type = type;
+	}
+	@Override
+	public String toString() {
+		return "Estate [surface=" + surface + ", localNumber=" + localNumber + ", floor=" + floor + ", address="
+				+ address + ", type=" + type + "]";
 	}
 	
 	
