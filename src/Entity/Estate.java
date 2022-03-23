@@ -5,15 +5,18 @@ public class Estate {
 	private int localNumber;
 	private int floor ;
 	private Address address;
-	public Estate(int surface, int localNumber, int floor, Address address) {
+	private Type type ;
+	
+	public Estate() {
+		super();
+	}
+	public Estate(int surface, int localNumber, int floor, Address address, Type type) {
 		super();
 		this.surface = surface;
 		this.localNumber = localNumber;
 		this.floor = floor;
 		this.address = address;
-	}
-	public Estate() {
-		super();
+		this.type = type;
 	}
 	public int getSurface() {
 		return surface;
@@ -39,6 +42,13 @@ public class Estate {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+	public Type getType() {
+		return type;
+	}
+	public void setType(Type type) {
+		this.type = type;
+	}
+	
 	
 	
 	
