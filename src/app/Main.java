@@ -15,7 +15,7 @@ public class Main {
 		for (int i = 0; i < attributeList.size() - 1; i++) {
 			String[] attributes = attributeList.get(i + 1).split(",");
 			IEstate estate = factory.getEstate(attributes[attributes.length - 1], attributes);
-			System.out.println(estate);
+			System.out.println(estate.estateType());
 		}
 
 	}
