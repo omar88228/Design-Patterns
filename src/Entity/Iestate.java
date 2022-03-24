@@ -1,5 +1,5 @@
-package Entity;
+package entity;
 
-public interface Iestate {
+public interface IEstate {
 	String estateType();
 }

@@ -1,28 +1,27 @@
+package app;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import Entity.Address;
-import Entity.Apartment;
-import Entity.Estate;
-import Entity.Garage;
-import Entity.Villa;
-
 public class Singleton {
-	
+
 	private static Singleton singleton;
 	private ArrayList<String> lista = new ArrayList<String>();
+
 	private Singleton() {
 		readFile();
 	}
+
 	public static Singleton getSingletion() {
 		if (singleton == null) {
-			singleton = new Singleton();	
+			singleton = new Singleton();
 		}
 		return singleton;
 	}
-	public  void readFile() {
+
+	public void readFile() {
 
 		BufferedReader reader;
 		try {

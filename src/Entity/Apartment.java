@@ -1,4 +1,6 @@
-package Entity;
+package entity;
+
+import enumeration.Type;
 
 public class Apartment extends Estate {
 	private final Type type= Type.APARTMENT;

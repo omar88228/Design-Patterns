@@ -1,14 +1,14 @@
-package Entity;
+package entity;
+
+import enumeration.Type;
 
 public class Villa extends Estate {
-	private final Type type= Type.VILLA;
-	
+	private final Type type = Type.VILLA;
+
 	public Villa() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
 
 	public Type getType() {
 		return type;
@@ -24,5 +24,5 @@ public class Villa extends Estate {
 		// TODO Auto-generated method stub
 		return toString();
 	}
-	
+
 }
