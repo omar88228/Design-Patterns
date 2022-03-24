@@ -12,7 +12,7 @@ public class Garage extends Estate {
 
 	@Override
 	public String toString() {
-		return "Garage [type=" + type + ", toString()=" + super.toString() + "]";
+		return "Garage ";
 	}
 	@Override
 	public String estateType() {

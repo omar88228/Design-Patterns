@@ -10,25 +10,19 @@ import Entity.Garage;
 import Entity.Villa;
 
 public class Singleton {
-	private int cunt = 1;
+	
 	private static Singleton singleton;
 	private ArrayList<String> lista = new ArrayList<String>();
-
 	private Singleton() {
-
+		readFile();
 	}
-
 	public static Singleton getSingletion() {
-
 		if (singleton == null) {
-			singleton = new Singleton();
+			singleton = new Singleton();	
 		}
-
 		return singleton;
-
 	}
-
-	public void readFile() {
+	public  void readFile() {
 
 		BufferedReader reader;
 		try {
@@ -36,49 +30,16 @@ public class Singleton {
 			String line = reader.readLine();
 			while (line != null) {
 				this.getLista().add(line);
-
 				line = reader.readLine();
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-	}
-
-//	public Estate createEstate(Address address) {
-//		String[] attributes = atributeSplit();
-//
-//		return new Estate(Integer.parseInt(attributes[0]), Integer.parseInt(attributes[1]),
-//				Integer.parseInt(attributes[2]), address);
-//
-//	}
-
-
-
-	public String[] atributeSplit() {
-
-		String infoEstate = this.getLista().get(cunt);
-		String[] attributes = infoEstate.split(",");
-
-		return attributes;
-
-	}
-
-	public int getCunt() {
-		return cunt;
-	}
-
-	public void setCunt(int cunt) {
-		this.cunt = cunt;
 	}
 
 	public ArrayList<String> getLista() {
 		return lista;
-	}
-
-	public void setLista(ArrayList<String> lista) {
-		this.lista = lista;
 	}
 
 }

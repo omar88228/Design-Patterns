@@ -10,19 +10,20 @@ import Entity.Iestate;
 public class Main {
 
 	public static void main(String[] args) {
-		Singleton sing = Singleton.getSingletion();
-//		sing.readFile();
-//		
-//		Estate estate = sing.createEstate(sing.createAdress());
-//		System.out.println(estate);
-//		Estate estate1 = sing.createEstate(sing.createAdress());
-//		System.out.println(estate);
 		
+		Singleton sing = Singleton.getSingletion();
+		ArrayList<String> attributeList = sing.getLista();
 		FactoryEstate factory = new FactoryEstate();
-		Iestate estate = factory.getEstate(sing);
-		Iestate estate1 = factory.getEstate(sing);
-		System.out.println(estate.estateType());
-		System.out.println(estate1.estateType());
+		
+		for (int i = 0; i < attributeList.size()-1; i++) {
+			String[] attributes = attributeList.get(i+1).split(",");
+			Iestate estate= factory.getEstate(attributes[attributes.length-1], attributes);
+			System.out.println(estate);
+		}
+		
+		
+		
 		
 	}
+	
 }

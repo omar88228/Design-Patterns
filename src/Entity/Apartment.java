@@ -10,7 +10,7 @@ public class Apartment extends Estate {
 
 	@Override
 	public String toString() {
-		return "Apartment [type=" + type + ", toString()=" + super.toString() + "]";
+		return "Apartment";
 	}
 	
 	@Override

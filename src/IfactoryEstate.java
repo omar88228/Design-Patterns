@@ -1,5 +1,5 @@
 import Entity.Iestate;
 
 public interface IfactoryEstate {
-	public Iestate getEstate( Singleton singleton);
+	public Iestate getEstate( String type,String[] attributes);
 }

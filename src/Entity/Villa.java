@@ -16,7 +16,7 @@ public class Villa extends Estate {
 
 	@Override
 	public String toString() {
-		return "Villa [type=" + type + ", toString()=" + super.toString() + "]";
+		return "Villa";
 	}
 
 	@Override
