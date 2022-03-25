@@ -1,21 +1,78 @@
 package app;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
+import Builder.Builder;
+import Builder.BuilderAddress;
 import entity.*;
+import enumeration.Type;
 
 public class Main {
 
 	public static void main(String[] args) {
+		int surface = 0;
+		int localNumber = 0;
+		int floor = 0;
+		String type = null;
+		String street = null, city = null, province = null, region = null;
 
-		Singleton sing = Singleton.getSingletion();
+		int cap = 0;
+		Singleton sing = Singleton.getInstance();
 		ArrayList<String> attributeList = sing.getLista();
-		FactoryEstate factory = new FactoryEstate();
+		Builder builder = new Builder();
+		BuilderAddress builderAddress = new BuilderAddress();
 
-		for (int i = 0; i < attributeList.size() - 1; i++) {
-			String[] attributes = attributeList.get(i + 1).split(",");
-			IEstate estate = factory.getEstate(attributes[attributes.length - 1], attributes);
-			System.out.println(estate.estateType());
+		String[] attributesName = attributeList.get(0).split(",");
+
+		
+
+		for (int i = 1; i < attributeList.size(); i++) {
+			String[] attributes = attributeList.get(i).split(",");
+			
+			for (int j = 0; j < attributes.length; j++) {
+				if (attributesName[j].equals("surface")) {
+					surface = Integer.parseInt(attributes[j]);
+
+				}
+				if (attributesName[j].equals("localNumber")) {
+					localNumber = Integer.parseInt(attributes[j]);
+				}
+				if (attributesName[j].equals("floor")) {
+					floor = Integer.parseInt(attributes[j]);
+				}
+				if (attributesName[j].equals("type")) {
+					type = attributes[j];
+
+				}
+				if (attributesName[j].equals("street")) {
+					street = attributes[j];
+
+				}
+				if (attributesName[j].equals("city")) {
+					city = attributes[j];
+
+				}
+				if (attributesName[j].equals("province")) {
+					province = attributes[j];
+
+				}
+				if (attributesName[j].equals("region")) {
+					region = attributes[j];
+
+				}
+				if (attributesName[j].equals("cap")) {
+					cap = Integer.parseInt(attributes[j]);
+
+				}
+			}
+			Address address = builderAddress.Cap(cap).City(city).Street(street).Region(region).Province(province)
+					.build();
+
+			Immobile immobile = builder.LocalNumber(localNumber).Surface(surface).Floor(floor).type(type)
+					.Address(address).build();
+			System.out.println(immobile.estateType());
 		}
 
 	}

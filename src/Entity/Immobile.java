@@ -1,13 +1,34 @@
 package entity;
 
-public class Estate implements IEstate {
+import java.util.Arrays;
+
+import enumeration.Type;
+
+public class Immobile implements IEstate {
 	private int surface;
 	private int localNumber;
 	private int floor;
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	private Address address;
+	private Type type ;
 
-	public Estate() {
+	public Immobile() {
 
+	}
+
+	public Type getType() {
+		return type;
+	}
+
+	public void setType(Type type) {
+		this.type = type;
 	}
 
 	public void setSurface(int surface) {
@@ -22,20 +43,18 @@ public class Estate implements IEstate {
 		this.floor = floor;
 	}
 
-	public void setAddress(Address address) {
-		this.address = address;
-	}
+
+	
 
 	@Override
 	public String toString() {
-		return "Estate [surface=" + surface + ", localNumber=" + localNumber + ", floor=" + floor + ", address="
-				+ address + "]";
+		return "Immobile [type=" + type + "]";
 	}
 
 	@Override
 	public String estateType() {
 		// TODO Auto-generated method stub
-		return toString();
+		return this.toString();
 	}
 
 }

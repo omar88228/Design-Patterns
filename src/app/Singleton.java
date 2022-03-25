@@ -14,7 +14,7 @@ public class Singleton {
 		readFile();
 	}
 
-	public static Singleton getSingletion() {
+	public static Singleton getInstance() {
 		if (singleton == null) {
 			singleton = new Singleton();
 		}
@@ -33,7 +33,12 @@ public class Singleton {
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
+			System.out.println("#########################");
+			System.out.println(e.getMessage());
+			System.out.println("#########################");
+			System.out.println(e.getStackTrace());
+			
 		}
 	}
 

@@ -1,4 +1,4 @@
-surface,localNumber,floor,address,type
-180,5,2,strada del bosco 14,latina,latina,lazio,04100,villa
-90,4,1,strada del bosco 14,latina,latina,lazio,04100,garage
-100,4,8,strada del bosco 14,latina,latina,lazio,04100,apartment
+type,localNumber,floor,street,city,province,region,cap,surface
+VILLA,5,2,strada cerreto la croce 54,latina,roma,lazio,04100,150
+GARAGE,4,1,strada cerreto la croce 54,latina,roma,lazio,04100,60
+APARTMENT,4,8,strada cerreto la croce 54,latina,roma,lazio,04100,100

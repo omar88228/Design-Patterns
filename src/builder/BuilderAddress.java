@@ -1,4 +1,4 @@
-package builder;
+package Builder;
 
 
 import entity.Address;
@@ -12,37 +12,37 @@ public class BuilderAddress implements IBuilderAddress {
 	}
 	
 	@Override
-	public IBuilderAddress setStreet(String street) {
+	public IBuilderAddress Street(String street) {
 		address.setStreet(street);
 		return this;
 	}
 
 	@Override
-	public IBuilderAddress setCity(String city) {
+	public IBuilderAddress City(String city) {
 		address.setCity(city);
 		return this;
 	}
 
 	@Override
-	public IBuilderAddress setProvince(String province) {
+	public IBuilderAddress Province(String province) {
 		address.setProvince(province);
 		return this;
 	}
 
 	@Override
-	public IBuilderAddress setRegion(String region) {
+	public IBuilderAddress Region(String region) {
 		address.setRegion(region);
 		return this;
 	}
 
 	@Override
-	public IBuilderAddress setCap(int cap) {
+	public IBuilderAddress Cap(int cap) {
 		address.setCap(cap);
 		return this;
 	}
 
 	@Override
-	public Address buildAdress() {
+	public Address build() {
 		// TODO Auto-generated method stub
 		return address;
 	}

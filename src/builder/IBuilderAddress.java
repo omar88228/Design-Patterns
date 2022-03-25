@@ -1,19 +1,19 @@
-package builder;
+package Builder;
 
 
 import entity.Address;
 
 public interface IBuilderAddress {
 	
-	IBuilderAddress setStreet(String street);
+	IBuilderAddress Street(String street);
 
-	IBuilderAddress setCity(String city);
+	IBuilderAddress City(String city);
 
-	IBuilderAddress setProvince(String province);
+	IBuilderAddress Province(String province);
 
-	IBuilderAddress setRegion(String region);
+	IBuilderAddress Region(String region);
 
-	IBuilderAddress setCap(int cap);
+	IBuilderAddress Cap(int cap);
 
-	Address buildAdress();
+	Address build();
 }
