@@ -22,7 +22,6 @@ public class Villa extends Immobile {
 	
 	@Override
 	public String estateType() {
-		
 		return super.estateType() + " the gate type is : " + this.gateType + " and the number of swimming pool is : " + this.numberOfSwimmingpools;
 	}
 

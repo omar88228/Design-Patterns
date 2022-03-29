@@ -50,7 +50,6 @@ public class Immobile implements IEstate {
 
 	@Override
 	public String estateType() {
-		// TODO Auto-generated method stub
 		return " immobile type : " + this.type.name() + " -";
 	}
 

@@ -13,20 +13,23 @@ public class Main {
 
 	public static void main(String[] args) {
 		int surface = 0;
-		int localNumber = 0;
-		int floor = 0;
-		String type = null;
-		String street = null, city = null, province = null, region = null;
+		
+		int localNumber = 0;		
+		int floor = 0;	
+		String type = null;	
+		String street = null			
+		String	city = null	
+		String province = null
+		String region = null;
 		int cap = 0;
 		Singleton sing = Singleton.getInstance();
-		
 		Builder builder = new Builder();
 		BuilderAddress builderAddress = new BuilderAddress();
-		ArrayList<String> attributeList = sing.getList();
-		String[] attributesName = attributeList.get(0).split(",");
+		ArrayList<String> data = sing.getList();
+		String[] firstRowOfData = attributeList.get(0).split(",");
 
-		for (int i = 1; i < attributeList.size(); i++) {
-			String[] attributes = attributeList.get(i).split(",");
+		for (int i = 1; i < data.size(); i++) {
+			String[] attributes = data.get(i).split(",");
 
 			for (int j = 0; j < attributes.length; j++) {
 				if (attributesName[j].equals("surface")) {

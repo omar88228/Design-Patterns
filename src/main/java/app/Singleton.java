@@ -32,10 +32,9 @@ public class Singleton {
 				line = reader.readLine();
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+
 			System.out.println(e);
-			
-			
+
 		}
 	}
 

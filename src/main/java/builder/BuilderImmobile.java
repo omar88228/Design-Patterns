@@ -11,6 +11,7 @@ public class BuilderImmobile  implements IBuilderImmobile {
 	private String gateType ;
 	private Address address;
 	private Type type;
+	
 	@Override
 	public IBuilderImmobile surface(int surface) {
 		this.surface=surface;
@@ -55,19 +56,16 @@ public class BuilderImmobile  implements IBuilderImmobile {
 
 	@Override
 	public Villa buildVilla() {
-		
 		return new Villa(numberOfSwimmingpools, gateType, surface, localNumber, address, type);
 	}
 
 	@Override
 	public Garage buildGarage() {
-		
 		return new Garage(surface, localNumber, address, type, gateType);
 	}
 
 	@Override
 	public Appartment buildAppartment() {
-		
 		return new Appartment(surface, localNumber, address, type, floor);
 	}
 

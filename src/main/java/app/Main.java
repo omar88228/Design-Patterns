@@ -19,53 +19,53 @@ public class Main {
 		Immobile immobile = null;
 		BuilderImmobile builder = new BuilderImmobile();
 		BuilderAddress builderAddress = new BuilderAddress();
-		ArrayList<String> attributeList = sing.getList();
-		String[] attributesName = attributeList.get(0).split(",");
+		ArrayList<String> data = sing.getList();
+		String[] firstRowOfData = data.get(0).split(",");
 
-		for (int i = 1; i < attributeList.size(); i++) {
-			String[] attributes = attributeList.get(i).split(",");
+		for (int i = 1; i < data.size(); i++) {
+			String[] attributesImmobile = data.get(i).split(",");
 
-			for (int j = 0; j < attributes.length; j++) {
-				if (attributesName[j].equals("surface")) {
-					surface = Integer.parseInt(attributes[j]);
-
-				}
-				if (attributesName[j].equals("localNumber")) {
-					localNumber = Integer.parseInt(attributes[j]);
-				}
-				if (attributesName[j].equals("floor") && !attributes[j].isBlank()) {
-					floor = Integer.parseInt(attributes[j]);
-				}
-				if (attributesName[j].equals("type")) {
-					type = attributes[j];
+			for (int j = 0; j < attributesImmobile.length; j++) {
+				if (firstRowOfData[j].equals("surface")) {
+					surface = Integer.parseInt(attributesImmobile[j]);
 
 				}
-				if (attributesName[j].equals("street")) {
-					street = attributes[j];
+				if (firstRowOfData[j].equals("localNumber")) {
+					localNumber = Integer.parseInt(attributesImmobile[j]);
+				}
+				if (firstRowOfData[j].equals("floor") && !attributesImmobile[j].isBlank()) {
+					floor = Integer.parseInt(attributesImmobile[j]);
+				}
+				if (firstRowOfData[j].equals("type")) {
+					type = attributesImmobile[j];
 
 				}
-				if (attributesName[j].equals("city")) {
-					city = attributes[j];
+				if (firstRowOfData[j].equals("street")) {
+					street = attributesImmobile[j];
 
 				}
-				if (attributesName[j].equals("province")) {
-					province = attributes[j];
+				if (firstRowOfData[j].equals("city")) {
+					city = attributesImmobile[j];
 
 				}
-				if (attributesName[j].equals("region")) {
-					region = attributes[j];
+				if (firstRowOfData[j].equals("province")) {
+					province = attributesImmobile[j];
 
 				}
-				if (attributesName[j].equals("cap")) {
-					cap = Integer.parseInt(attributes[j]);
+				if (firstRowOfData[j].equals("region")) {
+					region = attributesImmobile[j];
 
 				}
-				if (attributesName[j].equalsIgnoreCase("numberOfSwimmingpools") && !attributes[j].isBlank()) {
-					numberOfSwimmingpools = Integer.parseInt(attributes[j]);
+				if (firstRowOfData[j].equals("cap")) {
+					cap = Integer.parseInt(attributesImmobile[j]);
 
 				}
-				if (attributesName[j].equals("gateType")) {
-					gateType = attributes[j];
+				if (firstRowOfData[j].equalsIgnoreCase("numberOfSwimmingpools") && !attributesImmobile[j].isBlank()) {
+					numberOfSwimmingpools = Integer.parseInt(attributesImmobile[j]);
+
+				}
+				if (firstRowOfData[j].equals("gateType")) {
+					gateType = attributesImmobile[j];
 
 				}
 			}

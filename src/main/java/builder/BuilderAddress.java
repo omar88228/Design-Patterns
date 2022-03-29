@@ -5,7 +5,7 @@ import entity.Address;
 
 public class BuilderAddress implements IBuilderAddress {
 	
-	Address address;
+	private Address address;
 
 	public BuilderAddress() {
 		address=new Address();
@@ -43,7 +43,6 @@ public class BuilderAddress implements IBuilderAddress {
 
 	@Override
 	public Address build() {
-		// TODO Auto-generated method stub
 		return address;
 	}
 

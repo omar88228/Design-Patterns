@@ -1,10 +1,6 @@
 package builder;
 
-import entity.Address;
-import entity.Appartment;
-import entity.Garage;
-import entity.Immobile;
-import entity.Villa;
+import entity.*;
 
 public interface IBuilderImmobile {
 	
