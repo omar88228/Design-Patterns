@@ -1,4 +1,4 @@
-package Builder;
+package builder;
 
 import entity.Address;
 import entity.IEstate;
@@ -12,22 +12,22 @@ public class Builder  implements IBuilder {
 	}
 	
 	@Override
-	public IBuilder Surface(int surface) {
+	public IBuilder surface(int surface) {
 		immobile.setSurface(surface);
 		return this;
 	}
 	@Override
-	public IBuilder LocalNumber(int localNumber) {
+	public IBuilder localNumber(int localNumber) {
 		immobile.setLocalNumber(localNumber);
 		return this;
 	}
 	@Override
-	public IBuilder Floor(int floor) {
+	public IBuilder floor(int floor) {
 		immobile.setFloor(floor);
 		return this;
 	}
 	@Override
-	public IBuilder Address(Address address) {
+	public IBuilder address(Address address) {
 		immobile.setAddress(address);
 		return this;
 	}

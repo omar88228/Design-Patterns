@@ -1,4 +1,4 @@
-package Builder;
+package builder;
 
 import entity.Address;
 
@@ -6,14 +6,14 @@ import entity.Immobile;
 
 public interface IBuilder {
 	
-	IBuilder Surface(int surface);
+	IBuilder surface(int surface);
 
-	IBuilder LocalNumber(int localNumber);
+	IBuilder localNumber(int localNumber);
 
-	IBuilder Floor(int floor);
+	IBuilder floor(int floor);
 
 
-   IBuilder Address(Address address);
+   IBuilder address(Address address);
 
 	IBuilder type(String type);
 	

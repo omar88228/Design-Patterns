@@ -46,15 +46,11 @@ public class Immobile implements IEstate {
 
 	
 
-	@Override
-	public String toString() {
-		return "Immobile [type=" + type + "]";
-	}
 
 	@Override
-	public String estateType() {
+	public Type estateType() {
 		// TODO Auto-generated method stub
-		return this.toString();
+		return this.getType();
 	}
 
 }

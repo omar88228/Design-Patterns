@@ -1,13 +1,8 @@
 package app;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import builder.Builder;
-import builder.BuilderAddress;
+import java.util.*;
+import builder.*;
 import entity.*;
-import enumeration.Type;
 
 public class Main {
 
@@ -15,12 +10,14 @@ public class Main {
 		int surface = 0;
 		int localNumber = 0;
 		int floor = 0;
+		int numberOfSwimmingpools = 0;
+		String gateType = null;
 		String type = null;
 		String street = null, city = null, province = null, region = null;
 		int cap = 0;
 		Singleton sing = Singleton.getInstance();
-		
-		Builder builder = new Builder();
+		Immobile immobile = null;
+		BuilderImmobile builder = new BuilderImmobile();
 		BuilderAddress builderAddress = new BuilderAddress();
 		ArrayList<String> attributeList = sing.getList();
 		String[] attributesName = attributeList.get(0).split(",");
@@ -36,7 +33,7 @@ public class Main {
 				if (attributesName[j].equals("localNumber")) {
 					localNumber = Integer.parseInt(attributes[j]);
 				}
-				if (attributesName[j].equals("floor")) {
+				if (attributesName[j].equals("floor") && !attributes[j].isBlank()) {
 					floor = Integer.parseInt(attributes[j]);
 				}
 				if (attributesName[j].equals("type")) {
@@ -63,13 +60,37 @@ public class Main {
 					cap = Integer.parseInt(attributes[j]);
 
 				}
+				if (attributesName[j].equalsIgnoreCase("numberOfSwimmingpools") && !attributes[j].isBlank()) {
+					numberOfSwimmingpools = Integer.parseInt(attributes[j]);
+
+				}
+				if (attributesName[j].equals("gateType")) {
+					gateType = attributes[j];
+
+				}
 			}
 			Address address = builderAddress.cap(cap).city(city).street(street).region(region).province(province)
 					.build();
 
-			Immobile immobile = builder.localNumber(localNumber).surface(surface).floor(floor).type(type)
-					.address(address).build();
-			System.out.println(street);
+			if (type.equalsIgnoreCase("VILLA")) {
+
+				immobile = builder.address(address).gateType(gateType).localNumber(localNumber)
+						.numberOfSwimmingpools(numberOfSwimmingpools).surface(surface).type(type).buildVilla();
+
+			}
+			if (type.equalsIgnoreCase("GARAGE")) {
+
+				immobile = builder.address(address).gateType(gateType).localNumber(localNumber).surface(surface)
+						.type(type).buildGarage();
+
+			}
+			if (type.equalsIgnoreCase("APARTMENT")) {
+
+				immobile = builder.address(address).floor(floor).localNumber(localNumber).surface(surface).type(type)
+						.buildAppartment();
+
+			}
+			System.out.println(immobile.estateType());
 		}
 
 	}

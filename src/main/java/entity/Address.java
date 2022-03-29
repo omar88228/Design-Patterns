@@ -1,11 +1,11 @@
 package entity;
 
 public class Address {
+	private int cap;
 	private String street;
 	private String city;
 	private String province;
 	private String region;
-	private int cap;
 
 	public Address() {
 
