@@ -5,9 +5,8 @@ import enumeration.Type;
 public class Appartment extends Immobile {
 	private int floor;
 
-	public Appartment(int surface, int localNumber, Address address, Type type,int floor) {
+	public Appartment(int surface, int localNumber, Address address, Type type) {
 		super(surface, localNumber, address, type);
-		this.floor=floor;
 	}
 
 	public int getFloor() {

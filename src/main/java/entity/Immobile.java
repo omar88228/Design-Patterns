@@ -50,7 +50,7 @@ public class Immobile implements IEstate {
 
 	@Override
 	public String estateType() {
-		return " immobile type : " + this.type.name() + " -";
+		return " immobile type is :  " + this.type.name() + " and ";
 	}
 
 }

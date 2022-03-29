@@ -12,6 +12,11 @@ public class Villa extends Immobile {
 		this.numberOfSwimmingpools = numberOfSwimmingpools;
 		this.gateType = gateType;
 	}
+	
+	public Villa(int surface, int localNumber, Address address, Type type) {
+		super(surface, localNumber, address, type);
+		// TODO Auto-generated constructor stub
+	}
 
 	public void setNumberOfSwimmingpools(int numberOfSwimmingpools) {
 		this.numberOfSwimmingpools = numberOfSwimmingpools;

@@ -5,9 +5,9 @@ import enumeration.Type;
 public class Garage extends Immobile {
 	private String gateType;
 
-	public Garage(int surface, int localNumber, Address address, Type type,String gateType) {
+	public Garage(int surface, int localNumber, Address address, Type type) {
 		super(surface, localNumber, address, type);
-		this.gateType = gateType;
+		
 	}
 
 	public void setGateType(String gateType) {
